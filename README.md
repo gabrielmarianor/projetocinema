@@ -94,4 +94,8 @@ Plaintext
 │   ├── services/     # Camada de integração com API (Axios)
 │   └── types/        # Definições de tipagem TypeScript
 ├── db.json           # Banco de dados simulado (Json-Server)
+<<<<<<< HEAD
 └── ...arquivos de configuração
+=======
+└── ...arquivos de configuração
+>>>>>>> 4592da1c911fe35f5641cb80ece5f12055bfc9f0

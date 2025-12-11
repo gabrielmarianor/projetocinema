@@ -2,71 +2,7 @@
   "filmes": [],
   "salas": [],
   "sessoes": [],
-  "lanches": [
-    {
-      "nome": "Pipoca Média",
-      "descricao": "salgada",
-      "valorUnitario": 110,
-      "qtUnidade": 15,
-      "subtotal": 0,
-      "id": 1
-    }
-  ],
-  "pedidos": [
-    {
-      "qtInteira": 3,
-      "qtMeia": 1,
-      "ingressos": [
-        {
-          "sessaoId": 1,
-          "tipo": "inteira",
-          "valor": 40
-        },
-        {
-          "sessaoId": 1,
-          "tipo": "inteira",
-          "valor": 40
-        },
-        {
-          "sessaoId": 1,
-          "tipo": "inteira",
-          "valor": 40
-        },
-        {
-          "sessaoId": 1,
-          "tipo": "meia",
-          "valor": 20
-        }
-      ],
-      "lanches": [
-        {
-          "id": 3,
-          "nome": "Combo Pipoca Média com Refrigerante 500ml",
-          "descricao": "Pipoca Média e Coca-cola ou Guaraná",
-          "valorUnitario": 17,
-          "qtUnidade": 1,
-          "subtotal": 17
-        },
-        {
-          "id": 2,
-          "nome": "Refrigerante 500ml",
-          "descricao": "Coca-cola ou Guaraná",
-          "valorUnitario": 8,
-          "qtUnidade": 1,
-          "subtotal": 8
-        },
-        {
-          "id": 1,
-          "nome": "Pipoca Grande",
-          "descricao": "Pipoca salgada na manteiga",
-          "valorUnitario": 15,
-          "qtUnidade": 1,
-          "subtotal": 15
-        }
-      ],
-      "valorTotal": 180,
-      "id": 1
-    }
-  ],
+  "lanches": [],
+  "pedidos": [],
   "ingressos": []
 }
