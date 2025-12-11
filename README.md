@@ -1,95 +1,97 @@
-CineWeb - Sistema de Gestão de Cinema
+🎬 CineWeb - Gestão de Cinema
+Projeto Acadêmico | Disciplina: Desenvolvimento Web Frontend
 
-Projeto acadêmico desenvolvido para a disciplina de Desenvolvimento Web Frontend.
+O CineWeb é uma Single Page Application (SPA) robusta, projetada para modernizar a administração de complexos de cinema. O sistema centraliza o gerenciamento de catálogo, infraestrutura de salas, grade de horários e operações de bilheteria em uma interface fluida e responsiva.
 
-O CineWeb é uma aplicação web SPA (Single Page Application) desenvolvida para gerenciar as operações administrativas de um cinema. O sistema permite o cadastro e controle de filmes, salas, agendamento de sessões e simulação de venda de ingressos.
+🚀 Tecnologias e Ferramentas
+O projeto foi construído com uma stack moderna, priorizando tipagem estática e performance:
 
- Funcionalidades
+Core: React.js + Vite (Ambiente de alta performance)
 
- Módulo de Filmes
+Linguagem: TypeScript (Segurança e escalabilidade de código)
 
-- Listagem: Visualização de todos os filmes cadastrados em formato de cards.
+Navegação: React Router DOM (Gestão de rotas SPA)
 
-- Cadastro/Edição: Formulário para adicionar novos filmes ou editar existentes (Título, Sinopse, Classificação, Duração, Gênero, Datas).
+UI/UX: Bootstrap 5 + Bootstrap Icons (Layout responsivo e componentes visuais)
 
-- Exclusão: Remoção de filmes do catálogo.
+Data Integrity: Zod (Validação rigorosa de formulários e esquemas)
 
-Módulo de Salas
+Backend Simulation: Json-Server (Mock API RESTful)
 
-- Gerenciamento: Cadastro e listagem de salas com sua respectiva numeração e capacidade máxima.
+Conectividade: Axios (Cliente HTTP otimizado)
 
- Módulo de Sessões
+🛠️ Funcionalidades do Sistema
+1. 🎞️ Gestão de Catálogo (Filmes)
+Controle completo sobre os títulos em exibição:
 
-- Agendamento Inteligente: Criação de sessões cruzando dados de Filmes e Salas existentes.
+Visualização: Listagem intuitiva em formato de cards.
 
-- Listagem Detalhada: Exibição das sessões com dados populados (Nome do filme e Sala real, não apenas IDs).
+CRUD Completo: Adição e edição de metadados (Título, Sinopse, Classificação Indicativa, Duração, Gênero e Datas de Exibição).
 
-- Validação: Impede agendamentos com datas retroativas.
+Manutenção: Remoção de filmes fora de cartaz.
 
- Venda de Ingressos
+2. 🚪 Infraestrutura (Salas)
+Gerenciamento físico do cinema:
 
-- Simulação de Venda: Funcionalidade para registrar vendas de ingressos (Inteira ou Meia) vinculadas a uma sessão específica.
+Cadastro e controle de salas.
 
- Tecnologias Utilizadas
+Definição de numeração e capacidade máxima de público.
 
-O projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
+3. 📅 Grade de Horários (Sessões)
+Um módulo inteligente para organizar a programação:
 
-- Core: React + Vite (Template TypeScript)
-- Linguagem: TypeScript
-- Roteamento: React Router DOM
-- Estilização: Bootstrap 5 + Bootstrap Icons
-- Validação de Formulários: Zod
-- API Simulada: Json-Server (Backend Mock)
-- Requisições HTTP: Axios
+Agendamento Cruzado: Vincula filmes disponíveis às salas cadastradas.
 
- Como Rodar o Projeto
+Listagem Enriquecida: Exibe dados populados (nomes reais de filmes e salas) ao invés de apenas IDs.
 
-Pré-requisitos
+Validação de Segurança: O sistema bloqueia automaticamente a criação de sessões em datas retroativas.
 
-Node.js instalado (versão 16 ou superior recomendada).
+4. 🎟️ Bilheteria (Ingressos)
+Simulador de Vendas: Interface para registro de venda de ingressos (modalidades Inteira e Meia) vinculados diretamente às sessões ativas.
 
-Passo a Passo
+📦 Instalação e Execução
+Siga os passos abaixo para rodar o projeto localmente.
 
-1. Clone o repositório
+Pré-requisitos: Certifique-se de ter o Node.js instalado (v16+).
+
+Passo 1: Obter o Código
+Bash
 
 git clone <SEU_LINK_DO_GITHUB_AQUI>
 cd cineweb-sessions
-
-
-2. Instale as dependências
+Passo 2: Instalar Dependências
+Bash
 
 npm install
+Passo 3: Inicializar a API (Backend Mock)
+O frontend depende desta API para carregar os dados. Mantenha este terminal aberto.
 
-
-3. Inicie o Servidor Backend (Json-Server)
-O projeto precisa que a API simulada esteja rodando para funcionar corretamente.
+Bash
 
 npm run server
+Output esperado: Resources: http://localhost:3000/filmes ...
 
+Passo 4: Inicializar a Aplicação (Frontend)
+Abra um novo terminal (dentro da pasta do projeto) e execute:
 
-O terminal mostrará: Resources: http://localhost:3000/filmes ...
-
-4. Inicie o Frontend (React)
-Em um novo terminal (mantenha o anterior aberto), rode:
+Bash
 
 npm run dev
+Passo 5: Acessar
+O projeto estará disponível no seu navegador, geralmente em: 👉 http://localhost:5173
 
+📂 Arquitetura do Projeto
+A estrutura de pastas foi organizada para facilitar a manutenção e escalabilidade:
 
-5. Acesse a aplicação
-Abra seu navegador e vá para o link indicado no terminal (geralmente http://localhost:5173).
-
-Estrutura do Projeto
+Plaintext
 
 /
-├── public/              # Arquivos estáticos e db.json inicial
+├── public/           # Assets estáticos e base de dados inicial (db.json)
 ├── src/
-│   ├── components/      # Componentes reutilizáveis (Forms, Listas, Navbar)
-│   ├── pages/           # Páginas principais (Rotas)
-│   ├── schemas/         # Esquemas de validação Zod
-│   ├── services/        # Configuração do Axios e chamadas à API
-│   └── types/           # Interfaces TypeScript
-├── db.json              # Banco de dados simulado (Gerado na raiz ao rodar)
-└── ...config files
-
-
-Desenvolvido por gabrielmarianor para atividade prática de Frontend.
+│   ├── components/   # UI Kits reutilizáveis (Navbar, Forms, Cards)
+│   ├── pages/        # Views principais da aplicação (Rotas)
+│   ├── schemas/      # Regras de validação (Zod)
+│   ├── services/     # Camada de integração com API (Axios)
+│   └── types/        # Definições de tipagem TypeScript
+├── db.json           # Banco de dados simulado (Json-Server)
+└── ...arquivos de configuração
