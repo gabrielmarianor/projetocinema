@@ -93,7 +93,7 @@ const SessaoForm = ({ onSuccess, sessaoEditando, onCancel }: SessaoFormProps) =>
 
   return (
     <div className="card bg-dark border-secondary">
-      <div className="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+      <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
         <h5 className="mb-0">
           <i className={`bi ${sessaoEditando ? 'bi-pencil-square' : 'bi-plus-circle'} me-2`}></i>
           {sessaoEditando ? 'Editar Sessão' : 'Agendar Sessão'}
@@ -124,7 +124,7 @@ const SessaoForm = ({ onSuccess, sessaoEditando, onCancel }: SessaoFormProps) =>
               </select>
               {errors.filmeId && <div className="invalid-feedback">{errors.filmeId}</div>}
               {filmes.length === 0 && (
-                <small className="text-warning">
+                <small className="text-primary">
                   <i className="bi bi-exclamation-triangle me-1"></i>
                   Cadastre filmes primeiro
                 </small>
@@ -148,7 +148,7 @@ const SessaoForm = ({ onSuccess, sessaoEditando, onCancel }: SessaoFormProps) =>
               </select>
               {errors.salaId && <div className="invalid-feedback">{errors.salaId}</div>}
               {salas.length === 0 && (
-                <small className="text-warning">
+                <small className="text-primary">
                   <i className="bi bi-exclamation-triangle me-1"></i>
                   Cadastre salas primeiro
                 </small>
@@ -169,9 +169,9 @@ const SessaoForm = ({ onSuccess, sessaoEditando, onCancel }: SessaoFormProps) =>
           </div>
 
           <div className="d-flex gap-2">
-            <button 
-              type="submit" 
-              className="btn btn-warning" 
+            <button
+              type="submit"
+              className="btn btn-primary"
               disabled={loading || filmes.length === 0 || salas.length === 0}
             >
               {loading ? (

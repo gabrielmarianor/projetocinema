@@ -35,25 +35,26 @@ const Lanches = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-dark">
+    <div className="min-vh-100 bg-light">
       <Navbar />
       <div className="container py-4">
         <div className="d-flex align-items-center mb-4">
-          <i className="bi bi-cup-straw text-warning display-5 me-3"></i>
+          {/* MUDANÇA AQUI: Ícone amarelo (text-warning) */}
+          <i className="bi bi-cup-straw text-primary display-5 me-3"></i>
           <div>
-            <h1 className="text-light mb-0">Lanches e Combos</h1>
+            <h1 className="text-dark mb-0">Lanches e Combos</h1>
             <p className="text-secondary mb-0">Gerencie a bomboniere do cinema</p>
           </div>
         </div>
 
         <div className="row">
-          <div className="col-12 mb-4">
-            <LancheForm onSuccess={handleSuccess} lancheEditando={lancheEditando} onCancel={handleCancel} />
+          <div className="col-lg-4 mb-4">
+            <div className="sticky-top" style={{ top: '20px', zIndex: 1 }}>
+              <LancheForm onSuccess={handleSuccess} lancheEditando={lancheEditando} onCancel={handleCancel} />
+            </div>
           </div>
-        </div>
 
-        <div className="row">
-          <div className="col-12">
+          <div className="col-lg-8">
             {!loading && <LanchesList lanches={lanches} onDelete={fetchLanches} onEdit={(l) => { setLancheEditando(l); window.scrollTo({ top: 0, behavior: 'smooth' }); }} />}
           </div>
         </div>

@@ -75,7 +75,7 @@ const SalaForm = ({ onSuccess, salaEditando, onCancel }: SalaFormProps) => {
 
   return (
     <div className="card bg-dark border-secondary">
-      <div className="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+      <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
         <h5 className="mb-0">
           <i className={`bi ${salaEditando ? 'bi-pencil-square' : 'bi-plus-circle'} me-2`}></i>
           {salaEditando ? 'Editar Sala' : 'Cadastrar Sala'}
@@ -117,7 +117,7 @@ const SalaForm = ({ onSuccess, salaEditando, onCancel }: SalaFormProps) => {
           </div>
 
           <div className="d-flex gap-2">
-            <button type="submit" className="btn btn-warning" disabled={loading}>
+            <button type="submit" className="btn btn-primary" disabled={loading}>
               {loading ? (
                 <>
                   <span className="spinner-border spinner-border-sm me-2"></span>

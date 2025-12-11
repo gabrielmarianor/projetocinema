@@ -32,13 +32,13 @@ const LanchesList = ({ lanches, onDelete, onEdit }: LanchesListProps) => {
   return (
     <div className="table-responsive">
       <table className="table table-dark table-hover">
-        <thead className="table-warning">
+        <thead className="bg-primary text-white">
           <tr>
-            <th className="text-dark">Nome</th>
-            <th className="text-dark">Descrição</th>
-            <th className="text-dark">Valor (R$)</th>
-            <th className="text-dark">Estoque</th>
-            <th className="text-dark text-end">Ações</th>
+            <th className="text-white">Nome</th>
+            <th className="text-white">Descrição</th>
+            <th className="text-white">Valor (R$)</th>
+            <th className="text-white">Estoque</th>
+            <th className="text-white text-end">Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -46,11 +46,11 @@ const LanchesList = ({ lanches, onDelete, onEdit }: LanchesListProps) => {
             <tr key={lanche.id}>
               <td>{lanche.nome}</td>
               <td className="text-secondary">{lanche.descricao}</td>
-              <td className="text-warning fw-bold">R$ {lanche.valorUnitario.toFixed(2)}</td>
+              <td className="text-primary fw-bold">R$ {lanche.valorUnitario.toFixed(2)}</td>
               <td>{lanche.qtUnidade}</td>
               <td className="text-end">
                 <div className="btn-group">
-                  <button className="btn btn-outline-warning btn-sm" onClick={() => onEdit(lanche)}>
+                  <button className="btn btn-outline-primary btn-sm" onClick={() => onEdit(lanche)}>
                     <i className="bi bi-pencil"></i>
                   </button>
                   <button className="btn btn-outline-danger btn-sm" onClick={() => lanche.id && handleDelete(lanche.id)}>

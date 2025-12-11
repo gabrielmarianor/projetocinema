@@ -77,13 +77,13 @@ const PedidoModal = ({ isOpen, onClose, sessao }: PedidoModalProps) => {
       // Aqui simplificamos: criamos um objeto LancheCombo para cada unidade comprada para ficar na lista do Pedido
       const listaLanchesPedido: LancheCombo[] = [];
       lanchesSelecionados.forEach(item => {
-        for(let i=0; i < item.qtd; i++) {
-           // Copia o lanche e ajusta subtotal e unidade para representar o item no pedido
-           listaLanchesPedido.push({
-             ...item.lanche,
-             qtUnidade: 1, 
-             subtotal: item.lanche.valorUnitario
-           });
+        for (let i = 0; i < item.qtd; i++) {
+          // Copia o lanche e ajusta subtotal e unidade para representar o item no pedido
+          listaLanchesPedido.push({
+            ...item.lanche,
+            qtUnidade: 1,
+            subtotal: item.lanche.valorUnitario
+          });
         }
       });
 
@@ -112,8 +112,8 @@ const PedidoModal = ({ isOpen, onClose, sessao }: PedidoModalProps) => {
   return (
     <div className="modal d-block" style={{ backgroundColor: 'rgba(0,0,0,0.8)' }}>
       <div className="modal-dialog modal-lg modal-dialog-centered">
-        <div className="modal-content bg-dark border border-warning">
-          <div className="modal-header bg-warning text-dark border-0">
+        <div className="modal-content bg-dark border border-primary">
+          <div className="modal-header bg-primary text-white border-0">
             <h5 className="modal-title"><i className="bi bi-cart me-2"></i>Novo Pedido</h5>
             <button type="button" className="btn-close" onClick={onClose} disabled={loading}></button>
           </div>
@@ -127,7 +127,7 @@ const PedidoModal = ({ isOpen, onClose, sessao }: PedidoModalProps) => {
               <div className="row">
                 {/* Coluna Esquerda: Ingressos e Lanches */}
                 <div className="col-md-7 border-end border-secondary">
-                  <h6 className="text-warning mb-3">1. Selecione os Ingressos</h6>
+                  <h6 className="text-primary mb-3">1. Selecione os Ingressos</h6>
                   <div className="d-flex justify-content-between align-items-center mb-2">
                     <span>Inteira (R$ {PRECO_INTEIRA})</span>
                     <input type="number" min="0" className="form-control w-25 bg-secondary text-light border-0" value={qtInteira} onChange={(e) => setQtInteira(Number(e.target.value))} />
@@ -137,7 +137,7 @@ const PedidoModal = ({ isOpen, onClose, sessao }: PedidoModalProps) => {
                     <input type="number" min="0" className="form-control w-25 bg-secondary text-light border-0" value={qtMeia} onChange={(e) => setQtMeia(Number(e.target.value))} />
                   </div>
 
-                  <h6 className="text-warning mb-3">2. Adicionar Lanches</h6>
+                  <h6 className="text-primary mb-3">2. Adicionar Lanches</h6>
                   <div className="list-group mb-3">
                     {lanchesDisponiveis.map(lanche => (
                       <button key={lanche.id} type="button" className="list-group-item list-group-item-action bg-secondary text-light border-dark d-flex justify-content-between align-items-center" onClick={() => handleAddLanche(lanche)}>
@@ -145,7 +145,7 @@ const PedidoModal = ({ isOpen, onClose, sessao }: PedidoModalProps) => {
                           <strong>{lanche.nome}</strong>
                           <small className="d-block text-light opacity-75">{lanche.descricao}</small>
                         </div>
-                        <span className="badge bg-warning text-dark">R$ {lanche.valorUnitario.toFixed(2)}</span>
+                        <span className="badge bg-primary text-white">R$ {lanche.valorUnitario.toFixed(2)}</span>
                       </button>
                     ))}
                   </div>
@@ -153,7 +153,7 @@ const PedidoModal = ({ isOpen, onClose, sessao }: PedidoModalProps) => {
 
                 {/* Coluna Direita: Resumo */}
                 <div className="col-md-5">
-                  <h6 className="text-warning mb-3">Resumo do Pedido</h6>
+                  <h6 className="text-primary mb-3">Resumo do Pedido</h6>
                   <div className="card bg-secondary border-0 mb-3">
                     <div className="card-body p-2">
                       <small className="d-block"><strong>Filme:</strong> {sessao?.filme?.titulo}</small>
@@ -169,17 +169,17 @@ const PedidoModal = ({ isOpen, onClose, sessao }: PedidoModalProps) => {
                       <li key={idx} className="list-group-item bg-transparent text-light d-flex justify-content-between align-items-center">
                         <span>{item.qtd}x {item.lanche.nome}</span>
                         <div>
-                           <span className="me-2">R$ {(item.qtd * item.lanche.valorUnitario).toFixed(2)}</span>
-                           <i className="bi bi-x-circle text-danger cursor-pointer" style={{cursor: 'pointer'}} onClick={() => handleRemoveLanche(item.lanche.id!)}></i>
+                          <span className="me-2">R$ {(item.qtd * item.lanche.valorUnitario).toFixed(2)}</span>
+                          <i className="bi bi-x-circle text-danger cursor-pointer" style={{ cursor: 'pointer' }} onClick={() => handleRemoveLanche(item.lanche.id!)}></i>
                         </div>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="alert alert-warning bg-warning bg-opacity-25 border-warning text-light">
+                  <div className="alert alert-primary bg-primary bg-opacity-25 border-primary text-light">
                     <div className="d-flex justify-content-between align-items-center">
                       <span className="fw-bold">Total:</span>
-                      <span className="fs-4 fw-bold text-warning">R$ {valorTotal.toFixed(2)}</span>
+                      <span className="fs-4 fw-bold text-primary">R$ {valorTotal.toFixed(2)}</span>
                     </div>
                   </div>
 

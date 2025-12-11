@@ -80,28 +80,28 @@ const SessoesList = ({ sessoes, onDelete, onEdit }: SessoesListProps) => {
     <>
       <div className="table-responsive">
         <table className="table table-dark table-hover">
-          <thead className="table-warning">
+          <thead className="bg-primary text-white">
             <tr>
-              <th className="text-dark">
+              <th className="text-white">
                 <i className="bi bi-film me-1"></i>
                 Filme
               </th>
-              <th className="text-dark">
+              <th className="text-white">
                 <i className="bi bi-door-open me-1"></i>
                 Sala
               </th>
-              <th className="text-dark">
+              <th className="text-white">
                 <i className="bi bi-calendar me-1"></i>
                 Data/Horário
               </th>
-              <th className="text-dark text-end">Ações</th>
+              <th className="text-white text-end">Ações</th>
             </tr>
           </thead>
           <tbody>
             {sessoesDetalhadas.map((sessao) => (
               <tr key={sessao.id}>
                 <td>
-                  <span className="text-warning fw-bold">
+                  <span className="text-primary fw-bold">
                     {sessao.filme?.titulo || `Filme ID: ${sessao.filmeId}`}
                   </span>
                   {sessao.filme && (
@@ -121,7 +121,7 @@ const SessoesList = ({ sessoes, onDelete, onEdit }: SessoesListProps) => {
                   )}
                 </td>
                 <td>
-                  <i className="bi bi-clock me-1 text-warning"></i>
+                  <i className="bi bi-clock me-1 text-primary"></i>
                   {formatDateTime(sessao.dataHora)}
                 </td>
                 <td className="text-end">
@@ -134,7 +134,7 @@ const SessoesList = ({ sessoes, onDelete, onEdit }: SessoesListProps) => {
                       Vender Ingresso
                     </button>
                     <button
-                      className="btn btn-outline-warning btn-sm"
+                      className="btn btn-outline-primary btn-sm"
                       onClick={() => onEdit(sessao)}
                     >
                       <i className="bi bi-pencil"></i>

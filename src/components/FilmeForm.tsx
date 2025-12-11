@@ -81,7 +81,7 @@ const FilmeForm = ({ onSuccess, filmeEditando, onCancel }: FilmeFormProps) => {
         // Modo Criação
         await createFilme(result.data as Omit<Filme, 'id'>);
       }
-      
+
       setFormData({
         titulo: '',
         sinopse: '',
@@ -99,9 +99,9 @@ const FilmeForm = ({ onSuccess, filmeEditando, onCancel }: FilmeFormProps) => {
     }
   };
 
- return (
+  return (
     <div className="card bg-dark border-secondary">
-      <div className="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+      <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
         <h5 className="mb-0">
           <i className={`bi ${filmeEditando ? 'bi-pencil-square' : 'bi-plus-circle'} me-2`}></i>
           {filmeEditando ? 'Editar Filme' : 'Cadastrar Filme'}
@@ -212,7 +212,7 @@ const FilmeForm = ({ onSuccess, filmeEditando, onCancel }: FilmeFormProps) => {
           </div>
 
           <div className="d-flex gap-2">
-            <button type="submit" className="btn btn-warning" disabled={loading}>
+            <button type="submit" className="btn btn-primary" disabled={loading}>
               {loading ? (
                 <>
                   <span className="spinner-border spinner-border-sm me-2"></span>
@@ -226,9 +226,9 @@ const FilmeForm = ({ onSuccess, filmeEditando, onCancel }: FilmeFormProps) => {
               )}
             </button>
             {filmeEditando && (
-               <button type="button" className="btn btn-secondary" onClick={onCancel} disabled={loading}>
-                 Cancelar
-               </button>
+              <button type="button" className="btn btn-secondary" onClick={onCancel} disabled={loading}>
+                Cancelar
+              </button>
             )}
           </div>
         </form>

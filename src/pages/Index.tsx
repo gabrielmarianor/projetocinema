@@ -2,97 +2,81 @@ import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
-    <div className="min-vh-100 d-flex flex-column">
+    // MUDANÇA 1: Fundo da página agora é claro (bg-light)
+    <div className="min-vh-100 d-flex flex-column bg-light">
+
       {/* Hero Section */}
-      <section className="bg-dark text-light py-5 flex-grow-1 d-flex align-items-center">
+      <section className="flex-grow-1 d-flex align-items-center py-5">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
-              <div className="mb-4">
-                <span className="badge bg-warning text-dark px-3 py-2 mb-3">
-                  <i className="bi bi-star-fill me-1"></i>
-                  Sistema de Gerenciamento
-                </span>
-                <h1 className="display-3 fw-bold mb-4">
-                  <span className="text-warning">Cine</span>Web
-                </h1>
-                <p className="lead text-secondary mb-4">
-                  Gerencie filmes, salas, sessões e vendas de ingressos de forma simples e eficiente.
-                  Sistema completo para administração de cinemas.
-                </p>
-              </div>
-              <div className="d-flex flex-wrap gap-3">
-                <Link to="/filmes" className="btn btn-warning btn-lg px-4">
-                  <i className="bi bi-camera-reels me-2"></i>
-                  Gerenciar Filmes
-                </Link>
-                <Link to="/sessoes" className="btn btn-outline-light btn-lg px-4">
-                  <i className="bi bi-calendar-event me-2"></i>
-                  Ver Sessões
-                </Link>
-              </div>
+          <div className="d-flex flex-column align-items-center gap-5">
+
+            {/* Seção Superior: Texto Centralizado */}
+            <div className="text-center mw-800">
+
+              <h1 className="display-3 fw-bold mb-4 text-dark">
+                <span className="text-primary">Cine</span>Web
+              </h1>
+              <p className="lead text-secondary mb-4 mx-auto" style={{ maxWidth: '700px' }}>
+                A solução definitiva para o gerenciamento do seu cinema. Controle total de filmes, salas e sessões em uma interface moderna e intuitiva.
+              </p>
             </div>
-            <div className="col-lg-6 mt-5 mt-lg-0">
+
+            {/* Seção Inferior: Cards Horizontais */}
+            <div className="w-100">
               <div className="row g-4">
-                <div className="col-6">
-                  <div className="card bg-secondary border-0 h-100">
-                    <div className="card-body text-center py-4">
-                      <i className="bi bi-film text-warning display-4"></i>
-                      <h5 className="text-light mt-3">Filmes</h5>
-                      <p className="text-secondary small mb-0">
-                        Cadastre e gerencie o catálogo de filmes
-                      </p>
-                      <Link to="/filmes" className="stretched-link"></Link>
+                <div className="col-md-6 col-lg-3">
+                  <Link to="/filmes" className="text-decoration-none">
+                    <div className="card bg-dark text-white border-0 h-100 shadow-sm hover-scale transition-all">
+                      <div className="card-body text-center py-5">
+                        <i className="bi bi-film text-primary display-4 mb-3 d-block"></i>
+                        <h5 className="fw-bold mb-0">Filmes</h5>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-                <div className="col-6">
-                  <div className="card bg-secondary border-0 h-100">
-                    <div className="card-body text-center py-4">
-                      <i className="bi bi-door-open text-warning display-4"></i>
-                      <h5 className="text-light mt-3">Salas</h5>
-                      <p className="text-secondary small mb-0">
-                        Configure as salas do cinema
-                      </p>
-                      <Link to="/salas" className="stretched-link"></Link>
+                <div className="col-md-6 col-lg-3">
+                  <Link to="/salas" className="text-decoration-none">
+                    <div className="card bg-dark text-white border-0 h-100 shadow-sm hover-scale transition-all">
+                      <div className="card-body text-center py-5">
+                        <i className="bi bi-door-open text-primary display-4 mb-3 d-block"></i>
+                        <h5 className="fw-bold mb-0">Salas</h5>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-                <div className="col-6">
-                  <div className="card bg-secondary border-0 h-100">
-                    <div className="card-body text-center py-4">
-                      <i className="bi bi-calendar-check text-warning display-4"></i>
-                      <h5 className="text-light mt-3">Sessões</h5>
-                      <p className="text-secondary small mb-0">
-                        Agende horários de exibição
-                      </p>
-                      <Link to="/sessoes" className="stretched-link"></Link>
+                <div className="col-md-6 col-lg-3">
+                  <Link to="/sessoes" className="text-decoration-none">
+                    <div className="card bg-dark text-white border-0 h-100 shadow-sm hover-scale transition-all">
+                      <div className="card-body text-center py-5">
+                        <i className="bi bi-calendar-check text-primary display-4 mb-3 d-block"></i>
+                        <h5 className="fw-bold mb-0">Sessões</h5>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-                <div className="col-6">
-                  <div className="card bg-secondary border-0 h-100">
-                    <div className="card-body text-center py-4">
-                      <i className="bi bi-ticket-perforated text-warning display-4"></i>
-                      <h5 className="text-light mt-3">Ingressos</h5>
-                      <p className="text-secondary small mb-0">
-                        Realize vendas de ingressos
-                      </p>
-                      <Link to="/sessoes" className="stretched-link"></Link>
+                <div className="col-md-6 col-lg-3">
+                  <Link to="/lanches" className="text-decoration-none">
+                    <div className="card bg-dark text-white border-0 h-100 shadow-sm hover-scale transition-all">
+                      <div className="card-body text-center py-5">
+                        <i className="bi bi-cup-straw text-primary display-4 mb-3 d-block"></i>
+                        <h5 className="fw-bold mb-0">Lanches</h5>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
-      {/* Footer */}
-      <footer className="bg-dark text-secondary py-3 border-top border-secondary">
+
+      {/* Footer - Estilo Escuro para fechar a página */}
+      <footer className="bg-dark text-secondary py-4 border-top border-secondary mt-auto">
         <div className="container text-center">
           <small>
-            <i className="bi bi-code-slash me-1"></i>
-            CineWeb © 2025 - Trabalho Acadêmico - React + TypeScript + Bootstrap
+            <i className="bi bi-code-slash me-1 text-primary"></i>
+            CineWeb © 2025 - Sistema de Gestão de Cinema
           </small>
         </div>
       </footer>

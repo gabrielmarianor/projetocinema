@@ -32,24 +32,24 @@ const SalasList = ({ salas, onDelete, onEdit }: SalasListProps) => {
   return (
     <div className="table-responsive">
       <table className="table table-dark table-hover">
-        <thead className="table-warning">
+        <thead className="bg-primary text-white">
           <tr>
-            <th className="text-dark">
+            <th className="text-white">
               <i className="bi bi-hash me-1"></i>
               Número
             </th>
-            <th className="text-dark">
+            <th className="text-white">
               <i className="bi bi-people me-1"></i>
               Capacidade
             </th>
-            <th className="text-dark text-end">Ações</th>
+            <th className="text-white text-end">Ações</th>
           </tr>
         </thead>
         <tbody>
           {salas.map((sala) => (
             <tr key={sala.id}>
               <td>
-                <span className="badge bg-warning text-dark fs-6">
+                <span className="badge bg-primary text-white fs-6">
                   Sala {sala.numero}
                 </span>
               </td>
@@ -60,7 +60,7 @@ const SalasList = ({ salas, onDelete, onEdit }: SalasListProps) => {
               <td className="text-end">
                 <div className="btn-group">
                   <button
-                    className="btn btn-outline-warning btn-sm"
+                    className="btn btn-outline-primary btn-sm"
                     onClick={() => onEdit(sala)}
                   >
                     <i className="bi bi-pencil"></i>

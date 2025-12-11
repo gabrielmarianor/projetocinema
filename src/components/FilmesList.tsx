@@ -48,7 +48,7 @@ const FilmesList = ({ filmes, onDelete, onEdit }: FilmesListProps) => {
           <div className="card h-100 bg-dark border-secondary text-light">
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-start mb-2">
-                <h5 className="card-title text-warning mb-0">{filme.titulo}</h5>
+                <h5 className="card-title text-primary mb-0">{filme.titulo}</h5>
                 <span className={`badge ${getClassificacaoBadge(filme.classificacao)}`}>
                   {filme.classificacao === 'Livre' ? 'L' : filme.classificacao}
                 </span>
@@ -71,7 +71,7 @@ const FilmesList = ({ filmes, onDelete, onEdit }: FilmesListProps) => {
             </div>
             <div className="card-footer bg-transparent border-secondary d-flex gap-2">
               <button
-                className="btn btn-outline-warning btn-sm w-50"
+                className="btn btn-outline-primary btn-sm w-50"
                 onClick={() => onEdit(filme)}
               >
                 <i className="bi bi-pencil me-1"></i>
